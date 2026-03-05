@@ -1,4 +1,4 @@
-# Programmed Stock Investment API
+# Automated Investment API
 
 Backend system that simulates a programmed stock investment feature.
 
