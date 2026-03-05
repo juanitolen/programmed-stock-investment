@@ -1,3 +1,7 @@
+/// Executes a programmed purchase by distributing the investment
+/// amount equally across the available assets.
+/// 
+/// 
 using CompraProgramadaAcoes.Data;
 using CompraProgramadaAcoes.Domain;
 

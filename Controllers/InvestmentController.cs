@@ -17,12 +17,18 @@ public class InvestmentController : ControllerBase
         _purchaseService = purchaseService;
     }
 
-    [HttpPost("purchase")]
-    public IActionResult Purchase([FromQuery] decimal amount)
+[HttpPost("purchase")]
+public IActionResult Purchase([FromQuery] decimal amount)
+{
+    if (amount <= 0)
     {
-        _purchaseService.ExecutePurchase(amount);
-        return Ok("Compra executada");
+        return BadRequest("Amount must be greater than zero.");
     }
+
+    _purchaseService.ExecutePurchase(amount);
+
+    return Ok("Purchase executed successfully");
+}
 
     [HttpGet("orders")]
     public IActionResult GetOrders()

@@ -61,3 +61,4 @@
 /Users/juanlenis/CompraProgramadaAcoes/obj/Debug/net8.0/CompraProgramadaAcoes.pdb
 /Users/juanlenis/CompraProgramadaAcoes/obj/Debug/net8.0/CompraProgramadaAcoes.genruntimeconfig.cache
 /Users/juanlenis/CompraProgramadaAcoes/obj/Debug/net8.0/ref/CompraProgramadaAcoes.dll
+/Users/juanlenis/CompraProgramadaAcoes/obj/Debug/net8.0/CompraProgramadaAcoes.sourcelink.json
