@@ -88,3 +88,26 @@ This project was built as part of a backend engineering challenge to demonstrate
 - database integration
 - backend architecture
 - financial business logic
+
+
+## Example API Flow
+
+1. Start the API
+
+dotnet run
+
+2. Open Swagger in your browser
+
+http://localhost:5261/swagger
+
+3. Execute purchase
+
+POST /investment/purchase?amount=1000
+
+4. Check generated orders
+
+GET /investment/orders
+
+5. Get portfolio summary
+
+GET /investment/summary

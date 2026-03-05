@@ -5,6 +5,7 @@ using CompraProgramadaAcoes.Services;
 namespace CompraProgramadaAcoes.Controllers;
 
 [ApiController]
+
 [Route("investment")]
 public class InvestmentController : ControllerBase
 {
@@ -27,7 +28,12 @@ public IActionResult Purchase([FromQuery] decimal amount)
 
     _purchaseService.ExecutePurchase(amount);
 
-    return Ok("Purchase executed successfully");
+    return Ok(new
+    {
+        message = "Purchase executed successfully",
+        investedAmount = amount,
+        timestamp = DateTime.UtcNow
+    });
 }
 
     [HttpGet("orders")]
@@ -42,5 +48,19 @@ public IActionResult Purchase([FromQuery] decimal amount)
     {
         var assets = _context.Assets.ToList();
         return Ok(assets);
+    }
+
+     [HttpGet("summary")]
+    public IActionResult GetSummary()
+    {
+        var orders = _context.Orders.ToList();
+
+        var totalInvested = orders.Sum(o => o.Quantity * o.Price);
+
+        return Ok(new
+        {
+            totalOrders = orders.Count,
+            totalInvested = totalInvested
+        });
     }
 }
